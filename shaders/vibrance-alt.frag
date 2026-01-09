@@ -35,7 +35,7 @@ We only need to match the file name and use 'inc' to incdicate that
 // Balance: 0.0 to 1.0
 // Controls preservation of skin tones (higher values preserve skin tones more)
 #ifndef SHADER_VIBRANCE_SKIN_TONE_PROTECTION
-    #define SHADER_VIBRANCE_SKIN_TONE_PROTECTION 0.75  // Default fallback value
+    #define SHADER_VIBRANCE_SKIN_TONE_PROTECTION 0.00  // Default fallback value
 #endif
 
 precision highp float;
