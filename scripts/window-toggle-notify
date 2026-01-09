@@ -9,8 +9,6 @@
 # Logic:
 # - get property associated to input logic
 
-dispatcher=$1
-
 get_property() {
     case "$dispatcher" in
     togglegroup)
@@ -34,27 +32,38 @@ get_property() {
     esac
 }
 
-_activewindow=$(hyprctl activewindow -j)
+call_dispatcher() {
+    hyprctl dispatch "$dispatcher" active
+}
 
-case "$property" in
-grouped)
-    _value=$(echo "$_activewindow" | jq '.grouped | length > 0')
-    ;;
-swallowing)
-    _swallowed_address=$(echo "$_activewindow" | jq -r '.swallowing')
-    if [ "$_swallowed_address" = '0x0' ]; then
-        _value="None"
-    else
-        _value="$_swallowed_address ($(hyprctl clients -j | jq -r --arg OTHER "$_swallowed_address" '.[] | select(.address == $OTHER) | .class'))"
-    fi
-    ;;
-*)
-    _value=$(echo "$_activewindow" | jq -r --arg P "$property" '.[$P]')
-    ;;
-esac
+send_notification() {
+    activewindow=$(hyprctl activewindow -j)
 
-_summary="$property  $_value"
+    case "$property" in
+    grouped)
+        value=$(echo "$activewindow" | jq '.grouped | length > 0')
+        ;;
+    swallowing)
+        swallowed_address=$(echo "$activewindow" | jq -r '.swallowing')
+        if [ "$swallowed_address" = '0x0' ]; then
+            value="None"
+        else
+            value="$swallowed_address ($(hyprctl clients -j | jq -r --arg OTHER "$swallowed_address" '.[] | select(.address == $OTHER) | .class'))"
+        fi
+        ;;
+    *)
+        value=$(echo "$activewindow" | jq -r --arg P "$property" '.[$P]')
+        ;;
+    esac
 
-_body="$(echo "$_activewindow" | jq '(.address | length) as $max_len | (.title | length) as $title_len  | {address, class, title: (if $title_len > $max_len then .title[:$max_len] + "..." else .title end), pid}')"
+    summary="$property  $value"
 
-notify-send -a Hyprland -u low -t 3000 -c hypr "$_summary" "$_body"
+    body="$(echo "$activewindow" | jq '(.address | length) as $max_len | (.title | length) as $title_len  | {address, class, title: (if $title_len > $max_len then .title[:$max_len] + "..." else .title end), pid}')"
+
+    notify-send -a Hyprland -u low -t 3000 -c hypr "$summary" "$body"
+}
+
+dispatcher=$1
+get_property
+call_dispatcher
+send_notification
