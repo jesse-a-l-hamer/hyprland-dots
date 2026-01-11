@@ -6,10 +6,10 @@ TIME_CHECK_FILE=/tmp/timecheck-$(whoami)/notification
 toggle() {
     if [ "$(systemctl --user is-active timecheck.timer)" = "active" ]; then
         systemctl --user stop timecheck.timer
-        notify-send "$TIME_CHECK_OPTS" "stopped timecheck timer" ""
+        notify-send $TIME_CHECK_OPTS "stopped timecheck timer" ""
     elif [ -e "$TIME_CHECK_FILE" ]; then
         systemctl --user start timecheck.timer
-        notify-send "$TIME_CHECK_OPTS" "restarted timecheck timer" ""
+        notify-send $TIME_CHECK_OPTS "restarted timecheck timer" ""
     else
         systemctl --user start timecheck.timer
     fi
@@ -18,9 +18,9 @@ toggle() {
 delete() {
     if [ -e "$TIME_CHECK_FILE" ]; then
         rm "$TIME_CHECK_FILE"
-        notify-send "$TIME_CHECK_OPTS" "Deleted existing timer" ""
+        notify-send $TIME_CHECK_OPTS "Deleted existing timer" ""
     else
-        notify-send "$TIME_CHECK_OPTS" "No existing timer found" ""
+        notify-send $TIME_CHECK_OPTS "No existing timer found" ""
     fi
 }
 
