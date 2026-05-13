@@ -6,12 +6,11 @@ return {
 		local scale = "1.0"
 
 		local bitdepth = 8
-		local cm = "auto"
-		local sdrbrightness = 1.2
-		local sdrsaturation = 1.0
+		local color_opts = monitor_vars.opts_8bpc
 
-		if monitor_vars.use_10bpc then
+		if monitor_vars.opts_10bpc.enabled then
 			bitdepth = 10
+			color_opts = monitor_vars.opts_10bpc
 		end
 
 		hl.monitor({
@@ -20,9 +19,9 @@ return {
 			position = position,
 			scale = scale,
 			bitdepth = bitdepth,
-			cm = cm,
-			sdrbrightness = sdrbrightness,
-			sdrsaturation = sdrsaturation,
+			cm = color_opts.cm,
+			sdrbrightness = color_opts.sdrbrightness,
+			sdrsaturation = color_opts.sdrsaturation,
 		})
 	end,
 }

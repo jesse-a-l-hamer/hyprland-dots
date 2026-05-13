@@ -29,10 +29,15 @@ return {
     },
     render = {},
     theme = {
-        general = {},
+        general = {
+            snap = { enabled = true },
+        },
         decoration = {
             -- choose file from ./shaders/
             shader_file = "vibrance-alt.frag",
+            blur = { enabled = true },
+            shadow = { enabled = true },
+            glow = { enabled = false },
         },
         group = {},
         colors = {
@@ -94,7 +99,18 @@ return {
     },
     monitors = {
         samsung_qcq90 = {
-            use_10bpc = true,
+            opts_8bpc = {
+                cm = "auto",
+                sdrbrightness = 1.0,
+                sdrsaturation = 1.0,
+            },
+            opts_10bpc = {
+                -- set to true to use bitdepth 10, otherwise defaults to 8
+                enabled = true,
+                cm = "hdredid",
+                sdrbrightness = 1.0,
+                sdrsaturation = 1.0,
+            },
         },
         bonobo = {},
         surface = {},

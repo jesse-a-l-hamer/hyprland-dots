@@ -4,7 +4,6 @@ return {
 		local active_alpha = col.alpha.active .. ")"
 		local inactive_alpha = col.alpha.inactive .. ")"
 		local gradient_degrees = col.gradient_degrees
-
 		local border = {
 			col1 = "rgba(" .. col.map.accent,
 			col2 = "rgba(" .. col.map.accent_secondary,
@@ -18,10 +17,6 @@ return {
 			groupbar_locked = "rgba(" .. col.map.alternate_base,
 		}
 
-		local snap_conf = {
-			enabled = true,
-			respect_gaps = true,
-		}
 		local general_conf = {
 			border_size = 2,
 			gaps_in = 5,
@@ -59,7 +54,10 @@ return {
 				},
 				angle = gradient_degrees,
 			},
-			snap = snap_conf,
+			snap = {
+				enabled = vars.theme.general.snap.enabled,
+				respect_gaps = true,
+			},
 		}
 
 		local decoration_conf = {
@@ -69,15 +67,21 @@ return {
 			inactive_opacity = 0.85,
 			screen_shader = "./shaders/" .. vars.theme.decoration.shader_file,
 			blur = {
-				enabled = true,
+				enabled = vars.theme.decoration.blur.enabled,
 				size = 3,
 				passes = 1,
 			},
 			shadow = {
-				enabled = true,
+				enabled = vars.theme.decoration.shadow.enabled,
 				range = 48,
 				render_power = 3,
 				color = "rgba(" .. col.map.background .. active_alpha,
+			},
+			glow = {
+				enabled = vars.theme.decoration.glow.enabled,
+				range = 5,
+				render_power = 4,
+				color = "rgba(" .. col.map.accent .. active_alpha,
 			},
 		}
 
