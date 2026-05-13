@@ -1,0 +1,13 @@
+return {
+	setup = function(vars)
+		hl.config({
+			input = {
+				kb_layout = "us",
+				follow_mouse = 2,
+				touchpad = {
+					natural_scroll = false,
+				},
+			},
+		})
+	end,
+}
