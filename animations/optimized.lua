@@ -85,78 +85,78 @@ return {
 			leaf = "border",
 			enabled = true,
 			speed = 1.6,
-			curve = "liner",
+			bezier = "liner",
 		})
 		hl.animation({
 			leaf = "borderangle",
 			enabled = true,
 			speed = 82,
-			curve = "liner",
+			bezier = "liner",
 			style = "once",
 		})
 		hl.animation({
 			leaf = "windowsIn",
 			enabled = true,
 			speed = 3.2,
-			curve = "winIn",
+			bezier = "winIn",
 			style = "popin",
 		})
 		hl.animation({
 			leaf = "windowsOut",
 			enabled = true,
 			speed = 2.8,
-			curve = "easeOutCirc",
+			bezier = "easeOutCirc",
 		})
 		hl.animation({
 			leaf = "windowsMove",
 			enabled = true,
 			speed = 3.0,
-			curve = "wind",
+			bezier = "wind",
 			style = "gnomed",
 		})
 		hl.animation({
 			leaf = "fade",
 			enabled = true,
 			speed = 1.8,
-			curve = "md3_decel",
+			bezier = "md3_decel",
 		})
 		hl.animation({
 			leaf = "layersIn",
 			enabled = true,
 			speed = 1.8,
-			curve = "menu_decel",
+			bezier = "menu_decel",
 			style = "slide",
 		})
 		hl.animation({
 			leaf = "layersOut",
 			enabled = true,
 			speed = 1.5,
-			curve = "menu_accel",
+			bezier = "menu_accel",
 		})
 		hl.animation({
 			leaf = "fadeLayersIn",
 			enabled = true,
 			speed = 1.6,
-			curve = "menu_decel",
+			bezier = "menu_decel",
 		})
 		hl.animation({
 			leaf = "fadeLayersOut",
 			enabled = true,
 			speed = 1.8,
-			curve = "menu_accel",
+			bezier = "menu_accel",
 		})
 		hl.animation({
 			leaf = "workspaces",
 			enabled = true,
 			speed = 4.0,
-			curve = "menu_decel",
+			bezier = "menu_decel",
 			style = "slidefadevert 100%",
 		})
 		hl.animation({
 			leaf = "specialWorkspace",
 			enabled = true,
 			speed = 2.3,
-			curve = "md3_decel",
+			bezier = "md3_decel",
 			style = "slidefadevert 15%",
 		})
 	end,

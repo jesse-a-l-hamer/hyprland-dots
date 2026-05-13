@@ -14,7 +14,7 @@ return {
             hl.window_rule({
                 name = "browser-opacity",
                 match = { tag = "browser" },
-                opacity = "1.00 $& 0.90 $& 1",
+                opacity = "1.00 override 0.90 override 1",
             })
         end
 
@@ -22,7 +22,7 @@ return {
             hl.window_rule({
                 name = "desktop_portal-opacity",
                 match = { tag = "desktop_portal" },
-                opacity = "0.90 $& 0.70 $& 1",
+                opacity = "0.90 override 0.70 override 1",
             })
         end
 
@@ -64,7 +64,7 @@ return {
             hl.window_rule({
                 name = "polkit_agent-opacity",
                 match = { tag = "polkit_agent" },
-                opacity = "0.90 $& 0.70 $& 1",
+                opacity = "0.90 override 0.70 override 1",
             })
         end
 
@@ -72,7 +72,7 @@ return {
             hl.window_rule({
                 name = "qt_manager-opacity",
                 match = { tag = "qt_manager" },
-                opacity = "0.90 $& 0.80 $& 1",
+                opacity = "0.90 override 0.80 override 1",
             })
         end
 
@@ -80,7 +80,7 @@ return {
             hl.window_rule({
                 name = "terminal-opacity",
                 match = { tag = "terminal" },
-                opacity = "1.00 $& 0.80 $& 1",
+                opacity = "1.00 override 0.80 override 1",
             })
         end
 
@@ -88,7 +88,7 @@ return {
             hl.window_rule({
                 name = "utility-opacity",
                 match = { tag = "utility" },
-                opacity = "0.90 $& 0.70 $& 1",
+                opacity = "0.90 override 0.70 override 1",
             })
         end
 

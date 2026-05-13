@@ -1,12 +1,12 @@
 return {
     setup = function(vars)
         local main_mod = vars.binds.mods.main
-        local meh_mod = vars.binds.mods.meh
+        local meh_mod = " + " .. vars.binds.mods.meh
         local winman_mods = vars.binds.mods.windowman
         local cycling_mods = winman_mods.cycling
-        local workspace_mod = winman_mods.workspace
-        local move_mod = winman_mods.move
-        local resize_mod = winman_mods.resize
+        local workspace_mod = " + " .. winman_mods.workspace
+        local move_mod = " + " .. winman_mods.move
+        local resize_mod = " + " .. winman_mods.resize
         local pypr = vars.plugins.pypr
 
         -- basic
@@ -37,23 +37,23 @@ return {
         -- cycling
         hl.bind(main_mod .. " + tab", hl.dsp.exec_cmd(pypr .. " layout_center next"))
         hl.bind(
-            main_mod .. cycling_mods.prev .. " + tab",
+            main_mod .. " + " .. cycling_mods.prev .. " + tab",
             hl.dsp.exec_cmd(pypr .. " layout_center prev")
         )
         hl.bind(
-            main_mod .. cycling_mods.swap .. " + tab",
-            hl.dsp.window.swap({ "next" })
+            main_mod .. " + " .. cycling_mods.swap .. " + tab",
+            hl.dsp.window.swap({ next = true })
         )
         hl.bind(
-            main_mod .. cycling_mods.prev .. cycling_mods.swap .. " + tab",
-            hl.dsp.window.swap({ "prev" })
+            main_mod .. " + " .. cycling_mods.prev .. cycling_mods.swap .. " + tab",
+            hl.dsp.window.swap({ prev = true })
         )
 
         -- focus
-        hl.bind(main_mod .. " + right", hl.dsp.focus({ "r" }))
-        hl.bind(main_mod .. " + left", hl.dsp.focus({ "l" }))
-        hl.bind(main_mod .. " + up", hl.dsp.focus({ "u" }))
-        hl.bind(main_mod .. " + down", hl.dsp.focus({ "d" }))
+        hl.bind(main_mod .. " + right", hl.dsp.focus({ direction = "r" }))
+        hl.bind(main_mod .. " + left", hl.dsp.focus({ direction = "l" }))
+        hl.bind(main_mod .. " + up", hl.dsp.focus({ direction = "u" }))
+        hl.bind(main_mod .. " + down", hl.dsp.focus({ direction = "d" }))
 
         hl.bind(main_mod .. workspace_mod .. " + right", hl.dsp.group.next())
         hl.bind(main_mod .. workspace_mod .. " + left", hl.dsp.group.prev())
@@ -88,29 +88,29 @@ return {
         -- movement
         hl.bind(main_mod .. " + mouse:272", hl.dsp.window.drag())
 
-        hl.bind(main_mod .. move_mod .. " + right", hl.dsp.window.move({ "r" }))
-        hl.bind(main_mod .. move_mod .. " + left", hl.dsp.window.move({ "l" }))
-        hl.bind(main_mod .. move_mod .. " + up", hl.dsp.window.move({ "u" }))
-        hl.bind(main_mod .. move_mod .. " + down", hl.dsp.window.move({ "d" }))
+        hl.bind(main_mod .. move_mod .. " + right", hl.dsp.window.move({ direction = "r" }))
+        hl.bind(main_mod .. move_mod .. " + left", hl.dsp.window.move({ direction = "l" }))
+        hl.bind(main_mod .. move_mod .. " + up", hl.dsp.window.move({ direction = "u" }))
+        hl.bind(main_mod .. move_mod .. " + down", hl.dsp.window.move({ direction = "d" }))
 
         hl.bind(
             main_mod .. move_mod .. " + right",
-            hl.dsp.window.move({ 20, 0, relative = true }),
+            hl.dsp.window.move({ x = 20, y = 0, relative = true }),
             { repeating = true }
         )
         hl.bind(
             main_mod .. move_mod .. " + left",
-            hl.dsp.window.move({ -20, 0, relative = true }),
+            hl.dsp.window.move({ x = -20, y = 0, relative = true }),
             { repeating = true }
         )
         hl.bind(
             main_mod .. move_mod .. " + up",
-            hl.dsp.window.move({ 0, -20, relative = true }),
+            hl.dsp.window.move({ x = 0, y = -20, relative = true }),
             { repeating = true }
         )
         hl.bind(
             main_mod .. move_mod .. " + down",
-            hl.dsp.window.move({ 0, 20, relative = true }),
+            hl.dsp.window.move({ x = 0, y = 20, relative = true }),
             { repeating = true }
         )
         hl.bind(main_mod .. move_mod .. " + C", hl.dsp.window.center())
@@ -243,19 +243,19 @@ return {
 
         hl.bind(
             main_mod .. resize_mod .. " + right",
-            hl.dsp.window.resize({ 10, 0, relative = true })
+            hl.dsp.window.resize({ x = 10, y = 0, relative = true })
         )
         hl.bind(
             main_mod .. resize_mod .. " + left",
-            hl.dsp.window.resize({ -10, 0, relative = true })
+            hl.dsp.window.resize({ x = -10, y = 0, relative = true })
         )
         hl.bind(
             main_mod .. resize_mod .. " + up",
-            hl.dsp.window.resize({ 0, -10, relative = true })
+            hl.dsp.window.resize({ x = 0, y = -10, relative = true })
         )
         hl.bind(
             main_mod .. resize_mod .. " + down",
-            hl.dsp.window.resize({ 0, 10, relative = true })
+            hl.dsp.window.resize({ x = 0, y = 10, relative = true })
         )
     end,
 }
