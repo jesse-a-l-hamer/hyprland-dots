@@ -11,9 +11,9 @@ return {
             main_mod .. meh_mod .. " + slash",
             hl.dsp.exec_cmd("app2unit-term -- sudo " .. apps.file_manager)
         )
-        hl.bind(main_mod .. " + M", hl.dsp.exec_cmd(pypr .. " toggle system_monitor"))
+        hl.bind(main_mod .. " + J", hl.dsp.exec_cmd(pypr .. " toggle system_monitor"))
         hl.bind(
-            main_mod .. meh_mod .. " + M",
+            main_mod .. meh_mod .. " + J",
             hl.dsp.exec_cmd("app2unit-term -- sudo " .. apps.system_monitor)
         )
         hl.bind(main_mod .. " + U", hl.dsp.exec_cmd(pypr .. " toggle unit_monitor"))
@@ -24,13 +24,14 @@ return {
         )
         hl.bind(main_mod .. " + S", hl.dsp.exec_cmd(pypr .. " toggle sms"))
         hl.bind(
-            main_mod .. " + V",
+            main_mod .. " + M",
             hl.dsp.exec_cmd("app2unit-term -- " .. apps.mediaplayer_local)
         )
         hl.bind(
-            main_mod .. meh_mod .. " + V",
+            main_mod .. meh_mod .. " + M",
             hl.dsp.exec_cmd("app2unit-term -- " .. apps.mediaplayer_remote)
         )
         hl.bind(main_mod .. " + comma", hl.dsp.exec_cmd(pypr .. " toggle browser"))
+        hl.bind(main_mod .. " + V", hl.dsp.exec_cmd(pypr .. " toggle vault"))
     end,
 }
