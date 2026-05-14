@@ -35,10 +35,15 @@ return {
         )
 
         -- cycling
-        hl.bind(main_mod .. " + tab", hl.dsp.exec_cmd(pypr .. " layout_center next"))
+        -- hl.bind(main_mod .. " + tab", hl.dsp.exec_cmd(pypr .. " layout_center next"))
+        -- hl.bind(
+        --     main_mod .. " + " .. cycling_mods.prev .. " + tab",
+        --     hl.dsp.exec_cmd(pypr .. " layout_center prev")
+        -- )
+        hl.bind(main_mod .. " + tab", hl.dsp.window.cycle_next({next = true, tiled = true, floating = true}))
         hl.bind(
             main_mod .. " + " .. cycling_mods.prev .. " + tab",
-            hl.dsp.exec_cmd(pypr .. " layout_center prev")
+            hl.dsp.window.cycle_next({prev = true, tiled = true, floating = true})
         )
         hl.bind(
             main_mod .. " + " .. cycling_mods.swap .. " + tab",
