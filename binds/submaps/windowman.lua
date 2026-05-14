@@ -5,8 +5,6 @@ return {
         local winman_mods = vars.binds.mods.windowman
         local cycling_mods = winman_mods.cycling
         local workspace_mod = winman_mods.workspace
-        local move_mod = winman_mods.move
-        local resize_mod = winman_mods.resize
         local pypr = vars.plugins.pypr
         local catchall_notify = vars.binds.catchall_notify
 
@@ -237,10 +235,26 @@ return {
             hl.define_submap("wm_resize", function()
                 hl.bind("mouse:273", hl.dsp.window.resize())
 
-                hl.bind("right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }))
-                hl.bind("left", hl.dsp.window.resize({ x = -10, y = 0, relative = true }))
-                hl.bind("up", hl.dsp.window.resize({ x = 0, y = -10, relative = true }))
-                hl.bind("down", hl.dsp.window.resize({ x = 0, y = 10, relative = true }))
+                hl.bind(
+                    "right",
+                    hl.dsp.window.resize({ x = 10, y = 0, relative = true }),
+                    { repeating = true }
+                )
+                hl.bind(
+                    "left",
+                    hl.dsp.window.resize({ x = -10, y = 0, relative = true }),
+                    { repeating = true }
+                )
+                hl.bind(
+                    "up",
+                    hl.dsp.window.resize({ x = 0, y = -10, relative = true }),
+                    { repeating = true }
+                )
+                hl.bind(
+                    "down",
+                    hl.dsp.window.resize({ x = 0, y = 10, relative = true }),
+                    { repeating = true }
+                )
                 hl.bind("SHIFT + escape", hl.dsp.submap("reset"))
                 hl.bind("escape", hl.dsp.submap("windowman"))
                 hl.bind(

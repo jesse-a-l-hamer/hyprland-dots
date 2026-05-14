@@ -248,19 +248,23 @@ return {
 
         hl.bind(
             main_mod .. resize_mod .. " + right",
-            hl.dsp.window.resize({ x = 10, y = 0, relative = true })
+            hl.dsp.window.resize({ x = 10, y = 0, relative = true }),
+            {repeating = true}
         )
         hl.bind(
             main_mod .. resize_mod .. " + left",
-            hl.dsp.window.resize({ x = -10, y = 0, relative = true })
+            hl.dsp.window.resize({ x = -10, y = 0, relative = true }),
+            {repeating = true}
         )
         hl.bind(
             main_mod .. resize_mod .. " + up",
-            hl.dsp.window.resize({ x = 0, y = -10, relative = true })
+            hl.dsp.window.resize({ x = 0, y = -10, relative = true }),
+            {repeating = true}
         )
         hl.bind(
             main_mod .. resize_mod .. " + down",
-            hl.dsp.window.resize({ x = 0, y = 10, relative = true })
+            hl.dsp.window.resize({ x = 0, y = 10, relative = true }),
+            {repeating = true}
         )
     end,
 }
