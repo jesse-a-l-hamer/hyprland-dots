@@ -1,11 +1,13 @@
 return {
-	setup = function(vars)
-		hl.config({
-			render = {
-				cm_sdr_eotf = "gamma22force",
-				cm_auto_hdr = 1,
-				use_shader_blur_blend = true,
-			},
-		})
-	end,
+    setup = function(vars)
+        local render_vars = vars.render
+
+        hl.config({
+            render = {
+                cm_sdr_eotf = render_vars.cm_sdr_eotf,
+                cm_auto_hdr = render_vars.cm_auto_hdr,
+                use_shader_blur_blend = render_vars.use_shader_blur_blend,
+            },
+        })
+    end,
 }

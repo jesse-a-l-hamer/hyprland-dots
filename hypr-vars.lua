@@ -49,7 +49,11 @@ return {
             prefer_hdr = 1,
         },
     },
-    render = {},
+    render = {
+        cm_sdr_eotf = "gamma22force",
+        cm_auto_hdr = 1,
+        use_shader_blur_blend = true,
+    },
     theme = {
         general = {
             snap = { enabled = true },
