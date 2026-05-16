@@ -41,7 +41,7 @@ return {
         })
         hl.window_rule({
             name = "tag-terminal",
-            match = { class = "^(kitty)$|" .. "^(alacritty)$" },
+            match = { class = "^(kitty)$|" .. "^(alacritty)$|" .. "^(foot)$" },
             tag = "+terminal",
         })
         hl.window_rule({
