@@ -15,7 +15,10 @@ return {
     paths = {
         scripts = "~/.config/hypr/scripts/",
     },
-    debug = {},
+    debug = {
+        disable_logs = false,
+        disable_time = false,
+    },
     env = {
         uwsm = true,
         cursor_theme = "catppuccin-macchiato-dark-cursors",
