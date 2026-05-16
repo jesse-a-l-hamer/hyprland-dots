@@ -130,7 +130,13 @@ return {
             accel_profile = "flat",
         },
     },
-    gestures = {},
+    gestures = {
+        workspace_swipe_create_new = true,
+        workspace_swipe_cancel_ratio = 0.15,
+        gesture = {
+            horizontal_workspace_swipe = true,
+        },
+    },
     layouts = {
         use = "dwindle",
     },
