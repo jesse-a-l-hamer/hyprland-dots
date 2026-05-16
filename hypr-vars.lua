@@ -1,6 +1,13 @@
 local palette = require("palettes.catppuccin-macchiato")
 
 return {
+    animations = {
+        enabled = true,
+        workspace_wraparound = false,
+        -- choose file from ./animations/
+        -- do NOT include the file extension
+        animation = "optimized",
+    },
     apps = {
         browser = "zen.desktop",
         calendar = "khal.desktop",
@@ -12,17 +19,100 @@ return {
         sms = "org.kde.kdeconnect.sms.desktop",
         system_monitor = "btop",
     },
-    paths = {
-        scripts = "~/.config/hypr/scripts/",
+    binds = {
+        mods = {
+            main = "SUPER",
+            launcher = "CTRL",
+            meh = "SHIFT + CTRL + ALT",
+            notifications = {
+                all = " + ALT",
+                show = " + SHIFT",
+                close = " + CTRL",
+                delete = " + SHIFT + CTRL",
+            },
+            windowman = {
+                workspace = " + ALT",
+                move = " + CTRL",
+                resize = " + SHIFT",
+                cycling = {
+                    prev = " + SHIFT",
+                    swap = " + CTRL",
+                },
+            },
+        },
+        catchall_notify = "notify-send -t 5000 -u normal -a Hyprland -i keyboard",
     },
     debug = {
         disable_logs = false,
         disable_time = false,
     },
+    devices = {
+        ["logitech-mx-master-3s"] = {
+            sensitivity = 1,
+            accel_profile = "flat",
+        },
+    },
     env = {
         uwsm = true,
         cursor_theme = "catppuccin-macchiato-dark-cursors",
         cursor_size = 24,
+    },
+    gestures = {
+        workspace_swipe_create_new = true,
+        workspace_swipe_cancel_ratio = 0.15,
+        gesture = {
+            horizontal_workspace_swipe = true,
+        },
+    },
+    input = {
+        kb_layout = "us",
+        follow_mouse = 2,
+        touchpad = {
+            natural_scroll = false,
+        },
+    },
+    layout = {
+        use = "dwindle",
+        single_window_aspect_ratio = { 4, 3 },
+        dwindle = {
+            preserve_split = true,
+            smart_resizing = true,
+        },
+        master = {
+            new_status = "master",
+        },
+    },
+    monitors = {
+        samsung_qcq90 = {
+            opts_8bpc = {
+                cm = "auto",
+                sdrbrightness = 1.0,
+                sdrsaturation = 1.0,
+            },
+            opts_10bpc = {
+                -- set to true to use bitdepth 10, otherwise defaults to 8
+                enabled = true,
+                cm = "hdredid",
+                sdrbrightness = 1.0,
+                sdrsaturation = 1.0,
+            },
+        },
+        bonobo = {},
+        surface = {},
+        fallback = {},
+    },
+    paths = {
+        scripts = "~/.config/hypr/scripts/",
+    },
+    permissions = {
+        grim = true,
+        xdg_desktop_portal_hyprland = true,
+        hyprlock = true,
+        hyprpm = true,
+    },
+    plugins = {
+        pypr = "app2unit -- /usr/bin/pypr-client",
+        hyprgrass = {},
     },
     prefs = {
         cursor = {
@@ -53,138 +143,6 @@ return {
         cm_sdr_eotf = "gamma22force",
         cm_auto_hdr = 1,
         use_shader_blur_blend = true,
-    },
-    theme = {
-        general = {
-            snap = { enabled = true },
-        },
-        decoration = {
-            -- choose file from ./shaders/
-            shader_file = "vibrance-alt.frag",
-            blur = { enabled = true },
-            shadow = { enabled = true },
-            glow = { enabled = false },
-        },
-        group = {},
-        colors = {
-            map = {
-                background = palette.crust,
-                base = palette.base,
-                text = palette.text,
-                alternate_base = palette.mantle,
-                bright_text = palette.lavender,
-                accent = palette.flamingo,
-                accent_secondary = palette.sapphire,
-                accent2 = palette.maroon,
-                accent2_secondary = palette.blue,
-                accent3 = palette.green,
-                accent3_secondary = palette.yellow,
-                accent4 = palette.teal,
-                accent4_secondary = palette.peach,
-            },
-            alpha = {
-                active = "ee",
-                inactive = "66",
-            },
-            gradient_degrees = 45,
-        },
-        fonts = {
-            default = "VictorMono Nerd Font Propo",
-            mono = "VictorMono Nerd Font",
-            h1_size = 19,
-            h2_size = 15,
-            h3_size = 13,
-            size = 12,
-            small_size = 10,
-        },
-        icons = {
-            name = "Papirus-Dark",
-        },
-        gtk = {
-            name = "catppuccin-macchiato-flamingo-standard+default",
-        },
-    },
-    animations = {
-        enabled = true,
-        workspace_wraparound = false,
-        -- choose file from ./animations/
-        -- do NOT include the file extension
-        animation = "optimized",
-    },
-    permissions = {
-        grim = true,
-        xdg_desktop_portal_hyprland = true,
-        hyprlock = true,
-        hyprpm = true,
-    },
-    input = {
-        kb_layout = "us",
-        follow_mouse = 2,
-        touchpad = {
-            natural_scroll = false,
-        },
-    },
-    devices = {
-        ["logitech-mx-master-3s"] = {
-            sensitivity = 1,
-            accel_profile = "flat",
-        },
-    },
-    gestures = {
-        workspace_swipe_create_new = true,
-        workspace_swipe_cancel_ratio = 0.15,
-        gesture = {
-            horizontal_workspace_swipe = true,
-        },
-    },
-    layouts = {
-        use = "dwindle",
-    },
-    monitors = {
-        samsung_qcq90 = {
-            opts_8bpc = {
-                cm = "auto",
-                sdrbrightness = 1.0,
-                sdrsaturation = 1.0,
-            },
-            opts_10bpc = {
-                -- set to true to use bitdepth 10, otherwise defaults to 8
-                enabled = true,
-                cm = "hdredid",
-                sdrbrightness = 1.0,
-                sdrsaturation = 1.0,
-            },
-        },
-        bonobo = {},
-        surface = {},
-        fallback = {},
-    },
-    binds = {
-        mods = {
-            main = "SUPER",
-            launcher = "CTRL",
-            meh = "SHIFT + CTRL + ALT",
-            notifications = {
-                all = " + ALT",
-                show = " + SHIFT",
-                close = " + CTRL",
-                delete = " + SHIFT + CTRL",
-            },
-            windowman = {
-                workspace = " + ALT",
-                move = " + CTRL",
-                resize = " + SHIFT",
-                cycling = {
-                    prev = " + SHIFT",
-                    swap = " + CTRL",
-                },
-            },
-        },
-        catchall_notify = "notify-send -t 5000 -u normal -a Hyprland -i keyboard",
-    },
-    xwayland = {
-        enabled = true,
-        create_abstract_socket = true,
     },
     rules = {
         workspaces = {
@@ -262,8 +220,58 @@ return {
         uwsm_env_setup = true,
         hyprpm_reload = true,
     },
-    plugins = {
-        pypr = "app2unit -- /usr/bin/pypr-client",
-        hyprgrass = {},
+    theme = {
+        general = {
+            snap = { enabled = true },
+        },
+        decoration = {
+            -- choose file from ./shaders/
+            shader_file = "vibrance-alt.frag",
+            blur = { enabled = true },
+            shadow = { enabled = true },
+            glow = { enabled = false },
+        },
+        group = {},
+        colors = {
+            map = {
+                background = palette.crust,
+                base = palette.base,
+                text = palette.text,
+                alternate_base = palette.mantle,
+                bright_text = palette.lavender,
+                accent = palette.flamingo,
+                accent_secondary = palette.sapphire,
+                accent2 = palette.maroon,
+                accent2_secondary = palette.blue,
+                accent3 = palette.green,
+                accent3_secondary = palette.yellow,
+                accent4 = palette.teal,
+                accent4_secondary = palette.peach,
+            },
+            alpha = {
+                active = "ee",
+                inactive = "66",
+            },
+            gradient_degrees = 45,
+        },
+        fonts = {
+            default = "VictorMono Nerd Font Propo",
+            mono = "VictorMono Nerd Font",
+            h1_size = 19,
+            h2_size = 15,
+            h3_size = 13,
+            size = 12,
+            small_size = 10,
+        },
+        icons = {
+            name = "Papirus-Dark",
+        },
+        gtk = {
+            name = "catppuccin-macchiato-flamingo-standard+default",
+        },
+    },
+    xwayland = {
+        enabled = true,
+        create_abstract_socket = true,
     },
 }
