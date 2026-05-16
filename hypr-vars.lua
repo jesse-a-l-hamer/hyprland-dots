@@ -117,7 +117,13 @@ return {
         hyprlock = true,
         hyprpm = true,
     },
-    input = {},
+    input = {
+        kb_layout = "us",
+        follow_mouse = 2,
+        touchpad = {
+            natural_scroll = false,
+        },
+    },
     devices = {
         ["logitech-mx-master-3s"] = {
             sensitivity = 1,
