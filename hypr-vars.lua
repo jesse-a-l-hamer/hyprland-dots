@@ -182,7 +182,10 @@ return {
         },
         catchall_notify = "notify-send -t 5000 -u normal -a Hyprland -i keyboard",
     },
-    xwayland = {},
+    xwayland = {
+        enabled = true,
+        create_abstract_socket = true,
+    },
     rules = {
         workspaces = {
             first_ws_persistent = true,
