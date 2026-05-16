@@ -22,10 +22,29 @@ return {
         cursor_size = 24,
     },
     prefs = {
-        cursor = {},
-        ecosystem = {},
-        misc = {},
-        quirks = {},
+        cursor = {
+            persistent_warps = true,
+            inactive_timeout = 0,
+        },
+        ecosystem = {
+            no_update_news = true,
+            no_donation_nag = true,
+            enforce_permissions = true,
+        },
+        misc = {
+            force_default_wallpaper = 0,
+            disable_hyprland_logo = true,
+            disable_splash_rendering = true,
+            key_press_enables_dpms = true,
+            allow_session_lock_restore = true,
+            disable_xdg_env_checks = true,
+            enable_swallow = true,
+            swallow_regex = "^(kitty)$|^(alacritty)$|^(foot)$",
+            swallow_exception_regex = "^(?!mpv).*$",
+        },
+        quirks = {
+            prefer_hdr = 1,
+        },
     },
     render = {},
     theme = {
