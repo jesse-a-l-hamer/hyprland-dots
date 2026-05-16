@@ -111,7 +111,12 @@ return {
         -- do NOT include the file extension
         animation = "optimized",
     },
-    permissions = {},
+    permissions = {
+        grim = true,
+        xdg_desktop_portal_hyprland = true,
+        hyprlock = true,
+        hyprpm = true,
+    },
     input = {},
     devices = {
         ["logitech-mx-master-3s"] = {
