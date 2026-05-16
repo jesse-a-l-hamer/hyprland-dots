@@ -258,7 +258,10 @@ return {
             },
         },
     },
-    startup = {},
+    startup = {
+        uwsm_env_setup = true,
+        hyprpm_reload = true,
+    },
     plugins = {
         pypr = "app2unit -- /usr/bin/pypr-client",
         hyprgrass = {},
