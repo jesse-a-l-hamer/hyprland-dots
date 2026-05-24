@@ -177,6 +177,10 @@ return {
             utility = {
                 opacity = true,
             },
+            vault = {
+                pin_float = true,
+                move_size = true,
+            },
             video_call = {
                 pin_float = true,
             },

@@ -55,6 +55,11 @@ return {
             tag = "+utility",
         })
         hl.window_rule({
+            name = "tag-vault",
+            match = { class = "^(org.keepassxc.KeePassXC)$" },
+            tag = "+vault",
+        })
+        hl.window_rule({
             name = "tag-video_call-zoom",
             match = {
                 class = "^(zoom)$",

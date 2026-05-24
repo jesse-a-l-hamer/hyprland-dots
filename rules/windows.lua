@@ -92,6 +92,24 @@ return {
             })
         end
 
+        if rules.vault.pin_float then
+            hl.window_rule({
+                name = "vault-pin_float",
+                match = { tag = "vault" },
+                float = true,
+                pin = true,
+            })
+        end
+
+        if rules.vault.move_size then
+            hl.window_rule({
+                name = "vault-size_move",
+                match = { tag = "vault" },
+                move = { "monitor_w*0.02", "monitor_h*0.02" },
+                size = { "monitor_w*0.45", "monitor_h*0.35" },
+            })
+        end
+
         if rules.video_call.pin_float then
             hl.window_rule({
                 name = "video_call-pin_float",

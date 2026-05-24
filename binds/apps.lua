@@ -1,7 +1,7 @@
 return {
     setup = function(vars)
         local main_mod = vars.binds.mods.main
-        local meh_mod = " + "  ..vars.binds.mods.meh
+        local meh_mod = " + " .. vars.binds.mods.meh
         local apps = vars.apps
         local pypr = vars.plugins.pypr
 
@@ -32,6 +32,9 @@ return {
             hl.dsp.exec_cmd("app2unit-term -- " .. apps.mediaplayer_remote)
         )
         hl.bind(main_mod .. " + comma", hl.dsp.exec_cmd(pypr .. " toggle browser"))
-        hl.bind(main_mod .. " + V", hl.dsp.exec_cmd(pypr .. " toggle vault"))
+        hl.bind(
+            main_mod .. " + V",
+            hl.dsp.exec_cmd("app2unit -- /home/jalhamer/.local/bin/launch-keepassxc.sh")
+        )
     end,
 }
