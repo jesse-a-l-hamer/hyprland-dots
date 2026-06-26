@@ -29,7 +29,7 @@ return {
             )
         )
         hl.bind(
-            main_mod .. notif_mods.show .. notif_mods.all .. notif_key,
+            main_mod .. notif_mods.delete .. notif_mods.all .. notif_key,
             hl.dsp.exec_cmd("dunstctl history-clear")
         )
     end,
