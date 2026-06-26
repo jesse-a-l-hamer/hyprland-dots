@@ -92,7 +92,7 @@ return {
             opts_10bpc = {
                 -- set to true to use bitdepth 10, otherwise defaults to 8
                 enabled = true,
-                cm = "hdredid",
+                cm = "hdr",
                 sdrbrightness = 1.0,
                 sdrsaturation = 1.0,
             },
