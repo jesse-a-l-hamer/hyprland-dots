@@ -15,7 +15,7 @@ return {
         file_manager = "yazi",
         mediaplayer_local = "mpv.desktop",
         mediaplayer_remote = "yt-x.desktop",
-        launcher = "rofi",
+        launcher = "hyprlauncher",
         sms = "org.kde.kdeconnect.sms.desktop",
         system_monitor = "btop",
     },

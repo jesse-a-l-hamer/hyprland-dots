@@ -1,14 +1,16 @@
 local combo_cmd = {
-    rofi = "rofi -show combi -modes combi -combi-modes 'window,drun,run'",
+    default = "rofi -show combi -modes combi -combi-modes 'window,drun,run'",
+    hyprlauncher = "hyprlauncher",
 }
 local apps_cmd = {
-    rofi = "rofi -show drun",
+    default = "rofi -show drun",
+    hyprlauncher = "hyprlauncher",
 }
 local window_cmd = {
-    rofi = "rofi -show window",
+    default = "rofi -show window",
 }
 local run_cmd = {
-    rofi = "rofi -show run",
+    default = "rofi -show run",
 }
 
 return {
@@ -19,13 +21,13 @@ return {
 
         hl.bind(
             main_mod .. launcher_mod .. " + return",
-            hl.dsp.exec_cmd(combo_cmd[launcher])
+            hl.dsp.exec_cmd(combo_cmd[launcher] or combo_cmd["default"])
         )
-        hl.bind(main_mod .. launcher_mod .. " + A", hl.dsp.exec_cmd(apps_cmd[launcher]))
+        hl.bind(main_mod .. launcher_mod .. " + A", hl.dsp.exec_cmd(apps_cmd[launcher] or apps_cmd["default"]))
         hl.bind(
             main_mod .. launcher_mod .. " + W",
-            hl.dsp.exec_cmd(window_cmd[launcher])
+            hl.dsp.exec_cmd(window_cmd[launcher] or run_cmd["default"])
         )
-        hl.bind(main_mod .. launcher_mod .. " + R", hl.dsp.exec_cmd(run_cmd[launcher]))
+        hl.bind(main_mod .. launcher_mod .. " + R", hl.dsp.exec_cmd(run_cmd[launcher] or run_cmd["default"]))
     end,
 }
