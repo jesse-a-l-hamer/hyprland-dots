@@ -72,8 +72,8 @@ return {
             },
             shadow = {
                 enabled = vars.theme.decoration.shadow.enabled,
-                range = 48,
-                render_power = 3,
+                range = 24,
+                render_power = 4,
                 color = "rgba(" .. col.map.background .. active_alpha,
             },
             glow = {
