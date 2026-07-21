@@ -22,22 +22,27 @@ return {
             toggle_dnd = {
                 dunst = "dunstctl set-paused toggle",
                 wayle = "wayle notify dnd",
+                noctalia = "noctalia msg notification-dnd-toggle",
             },
             show_single = {
                 dunst = "dunstctl history-pop",
                 wayle = notify_unbound("show_single"),
+                noctalia = notify_unbound("show_single"),
             },
             show_all = {
                 dunst = "python " .. scripts .. "binds/notifications/show-all.py",
                 wayle = notify_unbound("show_all"),
+                noctalia = notify_unbound("show_all"),
             },
             close_single = {
                 dunst = "dunstctl close",
                 wayle = notify_unbound("close_single"),
+                noctalia = notify_unbound("close_single"),
             },
             close_all = {
                 dunst = "dunstctl close-all",
                 wayle = notify_unbound("close_all"),
+                noctalia = "noctalia msg notification-clear-active",
             },
             delete_single = {
                 dunst = "python "
@@ -46,10 +51,12 @@ return {
                 wayle = "python "
                     .. scripts
                     .. "binds/notifications/delete-single.py --notifier wayle",
+                noctalia = notify_unbound("delete_single"),
             },
             delete_all = {
                 dunst = "dunstctl history-clear",
                 wayle = "wayle notify dismiss-all",
+                noctalia = "noctalia msg notification-clear-history",
             },
         }
 

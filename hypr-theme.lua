@@ -1,9 +1,50 @@
+local merge = require("utils").merge
+local shell_overrides = function(shell, general, decoration, group)
+    local overrides = {
+        default = {
+            general = {},
+            decoration = {},
+            group = {},
+        },
+        noctalia = {
+            general = {
+                gaps_in = 5,
+                gaps_out = 10,
+            },
+            decoration = {
+                rounding = 20,
+                rounding_power = 2,
+
+                shadow = {
+                    enabled = true,
+                    range = 4,
+                    render_power = 3,
+                    color = 0xee1a1a1a,
+                },
+
+                blur = {
+                    enabled = true,
+                    size = 3,
+                    passes = 2,
+                    vibrancy = 0.1696,
+                },
+            },
+            group = {},
+        },
+    }
+
+    merge(general, (overrides[shell] or overrides.default).general)
+    merge(decoration, (overrides[shell] or overrides.default).decoration)
+    merge(group, (overrides[shell] or overrides.default).group)
+end
+
 return {
     setup = function(vars)
         local col = vars.theme.colors
         local active_alpha = col.alpha.active .. ")"
         local inactive_alpha = col.alpha.inactive .. ")"
         local gradient_degrees = col.gradient_degrees
+        local shell = vars.apps.shell
         local border = {
             col1 = "rgba(" .. col.map.accent,
             col2 = "rgba(" .. col.map.accent_secondary,
@@ -139,6 +180,8 @@ return {
                 ["col.locked_inactive"] = border.groupbar_locked .. inactive_alpha,
             },
         }
+
+        shell_overrides(shell, general_conf, decoration_conf, group_conf)
 
         hl.config({
             general = general_conf,

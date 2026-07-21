@@ -1,9 +1,25 @@
+local shell_overrides = {
+    default = function(main_mod, meh_mod) end,
+    noctalia = function(main_mod, meh_mod)
+        local ipc = "noctalia msg "
+
+        hl.bind(
+            main_mod .. " + space",
+            hl.dsp.exec_cmd(ipc .. "panel-toggle control-center")
+        )
+        hl.bind(
+            main_mod .. meh_mod .. " + space",
+            hl.dsp.exec_cmd(ipc .. "settings-toggle")
+        )
+    end,
+}
 return {
     setup = function(vars)
         local main_mod = vars.binds.mods.main
         local meh_mod = " + " .. vars.binds.mods.meh
         local apps = vars.apps
         local pypr = vars.plugins.pypr
+        local shell = vars.apps.shell
 
         hl.bind(main_mod .. " + period", hl.dsp.exec_cmd(pypr .. " toggle term"))
         hl.bind(main_mod .. " + slash", hl.dsp.exec_cmd(pypr .. " toggle file_manager"))
@@ -36,5 +52,9 @@ return {
             main_mod .. " + V",
             hl.dsp.exec_cmd("app2unit -- /home/jalhamer/.local/bin/launch-keepassxc.sh")
         )
+
+        if require("utils").contains_key(shell, shell_overrides) then
+            shell_overrides[shell](main_mod, meh_mod)
+        end
     end,
 }

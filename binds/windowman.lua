@@ -40,10 +40,19 @@ return {
         --     main_mod .. " + " .. cycling_mods.prev .. " + tab",
         --     hl.dsp.exec_cmd(pypr .. " layout_center prev")
         -- )
-        hl.bind(main_mod .. " + tab", hl.dsp.window.cycle_next({next = true, tiled = true, floating = true}))
+        hl.bind(
+            main_mod .. " + tab",
+            hl.dsp.window.cycle_next({ next = true, tiled = true, floating = true })
+        )
+        if vars.apps.shell == "noctalia" then
+            hl.bind(
+                main_mod .. " + ALT" .. " + tab",
+                hl.dsp.exec_cmd("noctalia msg window-switcher")
+            )
+        end
         hl.bind(
             main_mod .. " + " .. cycling_mods.prev .. " + tab",
-            hl.dsp.window.cycle_next({prev = true, tiled = true, floating = true})
+            hl.dsp.window.cycle_next({ prev = true, tiled = true, floating = true })
         )
         hl.bind(
             main_mod .. " + " .. cycling_mods.swap .. " + tab",
@@ -93,10 +102,22 @@ return {
         -- movement
         hl.bind(main_mod .. " + mouse:272", hl.dsp.window.drag())
 
-        hl.bind(main_mod .. move_mod .. " + right", hl.dsp.window.move({ direction = "r" }))
-        hl.bind(main_mod .. move_mod .. " + left", hl.dsp.window.move({ direction = "l" }))
-        hl.bind(main_mod .. move_mod .. " + up", hl.dsp.window.move({ direction = "u" }))
-        hl.bind(main_mod .. move_mod .. " + down", hl.dsp.window.move({ direction = "d" }))
+        hl.bind(
+            main_mod .. move_mod .. " + right",
+            hl.dsp.window.move({ direction = "r" })
+        )
+        hl.bind(
+            main_mod .. move_mod .. " + left",
+            hl.dsp.window.move({ direction = "l" })
+        )
+        hl.bind(
+            main_mod .. move_mod .. " + up",
+            hl.dsp.window.move({ direction = "u" })
+        )
+        hl.bind(
+            main_mod .. move_mod .. " + down",
+            hl.dsp.window.move({ direction = "d" })
+        )
 
         hl.bind(
             main_mod .. move_mod .. " + right",
@@ -249,22 +270,22 @@ return {
         hl.bind(
             main_mod .. resize_mod .. " + right",
             hl.dsp.window.resize({ x = 10, y = 0, relative = true }),
-            {repeating = true}
+            { repeating = true }
         )
         hl.bind(
             main_mod .. resize_mod .. " + left",
             hl.dsp.window.resize({ x = -10, y = 0, relative = true }),
-            {repeating = true}
+            { repeating = true }
         )
         hl.bind(
             main_mod .. resize_mod .. " + up",
             hl.dsp.window.resize({ x = 0, y = -10, relative = true }),
-            {repeating = true}
+            { repeating = true }
         )
         hl.bind(
             main_mod .. resize_mod .. " + down",
             hl.dsp.window.resize({ x = 0, y = 10, relative = true }),
-            {repeating = true}
+            { repeating = true }
         )
     end,
 }

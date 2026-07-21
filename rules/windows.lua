@@ -1,6 +1,18 @@
+local shell_overrides = {
+    default = function(rules) end,
+    noctalia = function(rules)
+        hl.window_rule({
+            match = { class = "dev.noctalia.Noctalia" },
+            float = true,
+            size = { 1080, 920 },
+        })
+    end,
+}
+
 return {
     setup = function(vars)
         local rules = vars.rules.windows
+        local shell = vars.apps.shell
 
         if rules.browser.idle_inhibit then
             hl.window_rule({
@@ -162,5 +174,7 @@ return {
                 suppress_event = "maximize",
             })
         end
+
+        (shell_overrides[shell] or shell_overrides.default)(rules)
     end,
 }
