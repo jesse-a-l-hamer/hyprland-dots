@@ -143,7 +143,7 @@ return {
     },
     render = {
         cm_sdr_eotf = "gamma22force",
-        cm_auto_hdr = 2,
+        cm_auto_hdr = 1,
         use_shader_blur_blend = true,
     },
     rules = {
