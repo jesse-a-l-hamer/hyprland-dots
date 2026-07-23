@@ -39,7 +39,8 @@ local shell_overrides = function(shell, general, decoration, group)
 end
 
 return {
-    setup = function(vars)
+    setup = function()
+        local vars = require("hypr-vars")
         local col = vars.theme.colors
         local active_alpha = col.alpha.active .. ")"
         local inactive_alpha = col.alpha.inactive .. ")"

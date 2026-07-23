@@ -1,5 +1,6 @@
 return {
-    setup = function(vars)
+    setup = function()
+        local vars = require("hypr-vars")
         if vars.gestures.gesture.horizontal_workspace_swipe then
             hl.gesture({
                 fingers = 3,

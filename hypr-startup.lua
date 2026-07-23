@@ -1,5 +1,6 @@
 return {
-    setup = function(vars)
+    setup = function()
+        local vars = require("hypr-vars")
         hl.on("hyprland.start", function()
             if vars.startup.uwsm_env_setup then
                 hl.exec_cmd(

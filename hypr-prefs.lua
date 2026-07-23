@@ -1,5 +1,6 @@
 return {
-    setup = function(vars)
+    setup = function()
+        local vars = require("hypr-vars")
         local cursor_vars = vars.prefs.cursor
         local ecosystem_vars = vars.prefs.ecosystem
         local misc_vars = vars.prefs.misc

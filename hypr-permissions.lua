@@ -1,5 +1,6 @@
 return {
-    setup = function(vars)
+    setup = function()
+        local vars = require("hypr-vars")
         if vars.permissions.grim then
             hl.permission({
                 binary = "/usr/(bin|local/bin)/grim",

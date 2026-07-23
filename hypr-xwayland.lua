@@ -1,5 +1,6 @@
 return {
-    setup = function(vars)
+    setup = function()
+        local vars = require("hypr-vars")
         hl.config({
             xwayland = {
                 enabled = vars.xwayland.enabled,

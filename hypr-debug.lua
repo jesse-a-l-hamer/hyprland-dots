@@ -1,6 +1,6 @@
 return {
-    setup = function(vars)
-        local debug_vars = vars.debug
+    setup = function()
+        local debug_vars = require("hypr-vars").debug
 
         hl.config({
             debug = {
