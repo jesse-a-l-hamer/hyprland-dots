@@ -1,5 +1,5 @@
 return {
-    setup = function(vars)
+    setup = function()
         hl.window_rule({
             name = "tag-browser",
             match = {

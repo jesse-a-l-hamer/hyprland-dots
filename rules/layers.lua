@@ -15,7 +15,8 @@ local shell_overrides = {
 }
 
 return {
-    setup = function(vars)
+    setup = function()
+        local vars = require("hypr-vars")
         local layer_vars = vars.rules.layers
         local shell = vars.apps.shell
 

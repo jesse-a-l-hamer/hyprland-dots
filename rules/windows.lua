@@ -10,7 +10,8 @@ local shell_overrides = {
 }
 
 return {
-    setup = function(vars)
+    setup = function()
+        local vars = require("hypr-vars")
         local rules = vars.rules.windows
         local shell = vars.apps.shell
 
