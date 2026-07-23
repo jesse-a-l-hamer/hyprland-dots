@@ -8,6 +8,14 @@ return {
         if shell == "noctalia" then
             local ipc = "noctalia msg "
             hl.bind(
+                main_mod .. " + space",
+                hl.dsp.exec_cmd(ipc .. "panel-toggle control-center")
+            )
+            hl.bind(
+                main_mod .. meh_mod .. " + space",
+                hl.dsp.exec_cmd(ipc .. "settings-toggle")
+            )
+            hl.bind(
                 main_mod .. " + K",
                 hl.dsp.exec_cmd(
                     ipc .. "panel-toggle blackbartblues/keymap:panel"
