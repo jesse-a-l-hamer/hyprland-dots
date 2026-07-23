@@ -2,15 +2,6 @@ local shell_overrides = {
     default = function(main_mod, meh_mod) end,
     noctalia = function(main_mod, meh_mod)
         local ipc = "noctalia msg "
-
-        hl.bind(
-            main_mod .. " + space",
-            hl.dsp.exec_cmd(ipc .. "panel-toggle control-center")
-        )
-        hl.bind(
-            main_mod .. meh_mod .. " + space",
-            hl.dsp.exec_cmd(ipc .. "settings-toggle")
-        )
     end,
 }
 return {
@@ -21,7 +12,11 @@ return {
         local pypr = vars.plugins.pypr
         local shell = vars.apps.shell
 
-        hl.bind(main_mod .. " + period", hl.dsp.exec_cmd(pypr .. " toggle term"))
+        hl.bind(
+            main_mod .. " + period",
+            hl.dsp.exec_cmd(pypr .. " toggle term"),
+            { description = "Terminal" }
+        )
         hl.bind(main_mod .. " + slash", hl.dsp.exec_cmd(pypr .. " toggle file_manager"))
         hl.bind(
             main_mod .. meh_mod .. " + slash",
