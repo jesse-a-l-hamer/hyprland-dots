@@ -1,5 +1,5 @@
 return {
-    setup = function(vars)
+    setup = function()
         hl.workspace_rule({
             workspace = "special:exposed",
             gaps_in = 30,

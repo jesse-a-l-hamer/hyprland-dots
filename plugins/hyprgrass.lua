@@ -1,5 +1,5 @@
 return {
-    setup = function(vars)
+    setup = function()
         if hl.plugin.hyprgrass ~= nil then
             hl.config({
                 plugin = {
