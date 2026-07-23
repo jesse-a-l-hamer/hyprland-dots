@@ -16,7 +16,7 @@ return {
         require("binds.windowman").setup(vars)
         require("binds.apps").setup(vars)
         require("binds.launcher").setup(vars)
-        require("binds.timecheck").setup(vars)
+        require("binds.widgets").setup(vars)
         require("binds.pyprland").setup(vars)
 
         require("binds.submaps.windowman").setup(vars)
