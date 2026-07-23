@@ -1,15 +1,15 @@
 return {
-	setup = function(vars, monitor_vars)
-		local output = ""
-		local mode = "preferred"
-		local position = "auto"
-		local scale = "1"
+    setup = function()
+        local output = ""
+        local mode = "preferred"
+        local position = "auto"
+        local scale = "1"
 
-		hl.monitor({
-			output = output,
-			mode = mode,
-			position = position,
-			scale = scale,
-		})
-	end,
+        hl.monitor({
+            output = output,
+            mode = mode,
+            position = position,
+            scale = scale,
+        })
+    end,
 }
