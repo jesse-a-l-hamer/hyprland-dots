@@ -61,33 +61,41 @@ return {
             },
         }
 
+        -- 4. Notifications
         hl.bind(
             main_mod .. notif_key,
-            hl.dsp.exec_cmd(notif_cmds.toggle_dnd[notif_app])
+            hl.dsp.exec_cmd(notif_cmds.toggle_dnd[notif_app]),
+            { description = "Toggle DND" }
         )
         hl.bind(
             main_mod .. notif_mods.show .. notif_key,
-            hl.dsp.exec_cmd(notif_cmds.show_single[notif_app])
+            hl.dsp.exec_cmd(notif_cmds.show_single[notif_app]),
+            { description = "Show single notification" }
         )
         hl.bind(
             main_mod .. notif_mods.show .. notif_mods.all .. notif_key,
-            hl.dsp.exec_cmd(notif_cmds.show_all[notif_app])
+            hl.dsp.exec_cmd(notif_cmds.show_all[notif_app]),
+            { description = "Show all notifications" }
         )
         hl.bind(
             main_mod .. notif_mods.close .. notif_key,
-            hl.dsp.exec_cmd(notif_cmds.close_single[notif_app])
+            hl.dsp.exec_cmd(notif_cmds.close_single[notif_app]),
+            { description = "Dismiss single notification" }
         )
         hl.bind(
             main_mod .. notif_mods.show .. notif_mods.all .. notif_key,
-            hl.dsp.exec_cmd(notif_cmds.close_all[notif_app])
+            hl.dsp.exec_cmd(notif_cmds.close_all[notif_app]),
+            { description = "Dismiss all notifications" }
         )
         hl.bind(
             main_mod .. notif_mods.delete .. notif_key,
-            hl.dsp.exec_cmd(notif_cmds.delete_single[notif_app])
+            hl.dsp.exec_cmd(notif_cmds.delete_single[notif_app]),
+            { description = "Delete single notification" }
         )
         hl.bind(
             main_mod .. notif_mods.delete .. notif_mods.all .. notif_key,
-            hl.dsp.exec_cmd(notif_cmds.delete_all[notif_app])
+            hl.dsp.exec_cmd(notif_cmds.delete_all[notif_app]),
+            { description = "Delete all notifications" }
         )
     end,
 }

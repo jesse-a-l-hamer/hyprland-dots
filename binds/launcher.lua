@@ -24,21 +24,26 @@ return {
         local launcher_mod = " + " .. vars.binds.mods.launcher
         local launcher = vars.apps.launcher
 
+        -- 3. Launcher
         hl.bind(
             main_mod .. launcher_mod .. " + return",
-            hl.dsp.exec_cmd(combo_cmd[launcher] or combo_cmd["default"])
+            hl.dsp.exec_cmd(combo_cmd[launcher] or combo_cmd["default"]),
+            { description = "Launcher" }
         )
         hl.bind(
             main_mod .. launcher_mod .. " + A",
-            hl.dsp.exec_cmd(apps_cmd[launcher] or apps_cmd["default"])
+            hl.dsp.exec_cmd(apps_cmd[launcher] or apps_cmd["default"]),
+            { description = "App Launcher" }
         )
         hl.bind(
             main_mod .. launcher_mod .. " + W",
-            hl.dsp.exec_cmd(window_cmd[launcher] or run_cmd["default"])
+            hl.dsp.exec_cmd(window_cmd[launcher] or run_cmd["default"]),
+            { description = "Window picker" }
         )
         hl.bind(
             main_mod .. launcher_mod .. " + R",
-            hl.dsp.exec_cmd(run_cmd[launcher] or run_cmd["default"])
+            hl.dsp.exec_cmd(run_cmd[launcher] or run_cmd["default"]),
+            { description = "Runner" }
         )
     end,
 }

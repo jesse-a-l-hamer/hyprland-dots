@@ -3,25 +3,26 @@ local shell_overrides = {
     noctalia = function()
         local ipc = "noctalia msg "
 
+        -- 6. Media
         hl.bind(
             "XF86AudioNext",
             hl.dsp.exec_cmd(ipc .. "media next"),
-            { locked = true }
+            { locked = true, description = "Media player next" }
         )
         hl.bind(
             "XF86AudioPause",
             hl.dsp.exec_cmd(ipc .. "media toggle"),
-            { locked = true }
+            { locked = true, description = "Media player toggle play/pause" }
         )
         hl.bind(
             "XF86AudioPlay",
             hl.dsp.exec_cmd(ipc .. "media toggle"),
-            { locked = true }
+            { locked = true, description = "Media player toggle play/pause" }
         )
         hl.bind(
             "XF86AudioPrev",
             hl.dsp.exec_cmd(ipc .. "media previous"),
-            { locked = true }
+            { locked = true, description = "Media player previous" }
         )
     end,
 }
@@ -32,25 +33,26 @@ return {
         if require("utils").contains_key(shell, shell_overrides) then
             shell_overrides[shell]()
         else
+            -- 6. Media
             hl.bind(
                 "XF86AudioNext",
                 hl.dsp.exec_cmd("playerctl next"),
-                { locked = true }
+                { locked = true, description = "Media player next" }
             )
             hl.bind(
                 "XF86AudioPause",
                 hl.dsp.exec_cmd("playerctl play-pause"),
-                { locked = true }
+                { locked = true, description = "Media player toggle play/pause" }
             )
             hl.bind(
                 "XF86AudioPlay",
                 hl.dsp.exec_cmd("playerctl play-pause"),
-                { locked = true }
+                { locked = true, description = "Media player toggle play/pause" }
             )
             hl.bind(
                 "XF86AudioPrev",
                 hl.dsp.exec_cmd("playerctl previous"),
-                { locked = true }
+                { locked = true, description = "Media player previous" }
             )
         end
     end,

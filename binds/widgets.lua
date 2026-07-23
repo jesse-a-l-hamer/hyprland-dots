@@ -8,31 +8,39 @@ return {
 
         if shell == "noctalia" then
             local ipc = "noctalia msg "
+            -- 2. Widgets
             hl.bind(
                 main_mod .. " + space",
-                hl.dsp.exec_cmd(ipc .. "panel-toggle control-center")
+                hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"),
+                { description = "Noctalia control-center" }
             )
             hl.bind(
                 main_mod .. meh_mod .. " + space",
-                hl.dsp.exec_cmd(ipc .. "settings-toggle")
+                hl.dsp.exec_cmd(ipc .. "settings-toggle"),
+                { description = "Noctalia settings" }
             )
             hl.bind(
                 main_mod .. " + K",
-                hl.dsp.exec_cmd(ipc .. "panel-toggle blackbartblues/keymap:panel")
+                hl.dsp.exec_cmd(ipc .. "panel-toggle blackbartblues/keymap:panel"),
+                { description = "Noctalia keymap" }
             )
             hl.bind(
                 main_mod .. " + T",
-                hl.dsp.exec_cmd(ipc .. "panel-toggle noctalia/timer:panel")
+                hl.dsp.exec_cmd(ipc .. "panel-toggle noctalia/timer:panel"),
+                { description = "Noctalia timer" }
             )
             hl.bind(
                 main_mod .. meh_mod .. " + T",
-                hl.dsp.exec_cmd(ipc .. "panel-toggle nightwatch75/todo:panel")
+                hl.dsp.exec_cmd(ipc .. "panel-toggle nightwatch75/todo:panel"),
+                { description = "Noctalia todo" }
             )
         else
+            -- 2. Widgets
             hl.bind(main_mod .. " + T", hl.dsp.exec_cmd(timecheck .. " toggle"))
             hl.bind(
                 main_mod .. meh_mod .. " + T",
-                hl.dsp.exec_cmd(timecheck .. " delete")
+                hl.dsp.exec_cmd(timecheck .. " delete"),
+                { description = "Custom timer" }
             )
         end
     end,

@@ -15,7 +15,7 @@ return {
         require("binds.media").setup()
         require("binds.notifications").setup()
         require("binds.pyprland").setup()
-        require("binds.system").setup()
+        require("binds.session").setup()
         require("binds.volume").setup()
         require("binds.widgets").setup()
         require("binds.windowman").setup()
