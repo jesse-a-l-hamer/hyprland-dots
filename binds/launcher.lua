@@ -18,7 +18,8 @@ local run_cmd = {
 }
 
 return {
-    setup = function(vars)
+    setup = function()
+        local vars = require("hypr-vars")
         local main_mod = vars.binds.mods.main
         local launcher_mod = " + " .. vars.binds.mods.launcher
         local launcher = vars.apps.launcher

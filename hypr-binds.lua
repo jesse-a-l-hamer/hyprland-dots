@@ -6,20 +6,20 @@ return {
         hl.bind(
             main_mod .. meh_mod .. " + escape",
             hl.dsp.submap("reset"),
-            { submap_universal = true }
+            { submap_universal = true, description = "Universal submap reset" }
         )
 
-        require("binds.system").setup(vars)
-        require("binds.brightness").setup(vars)
-        require("binds.media").setup(vars)
-        require("binds.notifications").setup(vars)
-        require("binds.volume").setup(vars)
-        require("binds.windowman").setup(vars)
-        require("binds.apps").setup(vars)
-        require("binds.launcher").setup(vars)
-        require("binds.widgets").setup(vars)
-        require("binds.pyprland").setup(vars)
+        require("binds.apps").setup()
+        require("binds.brightness").setup()
+        require("binds.launcher").setup()
+        require("binds.media").setup()
+        require("binds.notifications").setup()
+        require("binds.pyprland").setup()
+        require("binds.system").setup()
+        require("binds.volume").setup()
+        require("binds.widgets").setup()
+        require("binds.windowman").setup()
 
-        require("binds.submaps.windowman").setup(vars)
+        require("binds.submaps.windowman").setup()
     end,
 }

@@ -16,7 +16,8 @@ local shell_overrides = {
     end,
 }
 return {
-    setup = function(vars)
+    setup = function()
+        local vars = require("hypr-vars")
         local shell = vars.apps.shell
         if require("utils").contains_key(shell, shell_overrides) then
             shell_overrides[shell]()

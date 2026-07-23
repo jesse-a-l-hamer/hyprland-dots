@@ -1,5 +1,6 @@
 return {
-    setup = function(vars)
+    setup = function()
+        local vars = require("hypr-vars")
         local main_mod = vars.binds.mods.main
         local meh_mod = " + " .. vars.binds.mods.meh
         local timecheck = vars.paths.scripts .. "binds/apps/timecheck"
@@ -17,9 +18,7 @@ return {
             )
             hl.bind(
                 main_mod .. " + K",
-                hl.dsp.exec_cmd(
-                    ipc .. "panel-toggle blackbartblues/keymap:panel"
-                )
+                hl.dsp.exec_cmd(ipc .. "panel-toggle blackbartblues/keymap:panel")
             )
             hl.bind(
                 main_mod .. " + T",
