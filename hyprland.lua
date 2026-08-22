@@ -15,3 +15,6 @@ require("hypr-xwayland").setup()
 require("hypr-rules").setup()
 require("hypr-startup").setup()
 require("hypr-plugins").setup()
+
+-- For Noctalia Color templates
+require("noctalia").apply_theme()
