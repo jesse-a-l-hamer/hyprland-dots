@@ -29,8 +29,8 @@ return {
         )
         hl.bind(
             main_mod .. meh_mod .. " + J",
-            hl.dsp.exec_cmd("app2unit-term -- sudo " .. apps.system_monitor),
-            { description = "System monitor (sudo)" }
+            hl.dsp.exec_cmd("noctalia msg panel-toggle tordex/nvtop:panel gpu"),
+            { description = "GPU monitor" }
         )
         hl.bind(
             main_mod .. " + U",
