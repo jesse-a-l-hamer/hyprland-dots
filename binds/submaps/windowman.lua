@@ -41,10 +41,8 @@ return {
             )
             hl.bind(
                 cycling_mods.swap .. " + tab",
-                hl.dsp.window.swap(
-                    { next = true },
-                    { description = "Swap next window" }
-                )
+                hl.dsp.window.swap({ next = true }),
+                { description = "Swap next window" }
             )
             hl.bind(
                 cycling_mods.prev .. cycling_mods.swap .. " + tab",

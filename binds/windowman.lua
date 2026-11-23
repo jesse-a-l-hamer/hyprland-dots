@@ -103,14 +103,13 @@ return {
         )
         hl.bind(
             main_mod .. " + " .. cycling_mods.swap .. " + tab",
-            hl.dsp.window.swap({ next = true }, { description = "Swap window next" })
+            hl.dsp.window.swap({ next = true }),
+            { description = "Swap window next" }
         )
         hl.bind(
             main_mod .. " + " .. cycling_mods.prev .. cycling_mods.swap .. " + tab",
-            hl.dsp.window.swap(
-                { prev = true },
-                { description = "Swap window previous" }
-            )
+            hl.dsp.window.swap({ prev = true }),
+            { description = "Swap window previous" }
         )
 
         -- 12. Window management - Focus
